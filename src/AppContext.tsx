@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import type { AppState, Module, PracticeSession, Shortcut, UserProfile } from './types';
-import { DEFAULT_TEMPLATES, MODULE_PARTS, loadState, saveState } from './utils';
+import { MODULE_PARTS, loadState, saveState } from './utils';
 
 interface AppContextValue {
   state: AppState;
@@ -23,7 +23,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const stateRef = useRef(state);
   stateRef.current = state;
 
-  // Always ensure light mode on document
   useEffect(() => {
     document.documentElement.classList.remove('dark');
   }, []);
@@ -57,8 +56,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const addShortcut = useCallback(
     (shortcut: Omit<Shortcut, 'id'>): { success: boolean; message: string } => {
       const existing = stateRef.current.shortcuts.find(
-        (sc) =>
-          sc.book === shortcut.book && sc.test === shortcut.test &&
+        (sc) => sc.book === shortcut.book && sc.test === shortcut.test &&
           sc.module === shortcut.module && sc.part === shortcut.part,
       );
       if (existing) return { success: false, message: 'This shortcut already exists.' };
