@@ -75,10 +75,11 @@ export function WelcomeCard() {
             </p>
             <h1 className="text-2xl sm:text-3xl font-black text-white leading-tight">
               Hello,{' '}
-              <InlineEdit value={profile.name} placeholder="add your name" label="Your name"
+              {/* <InlineEdit value={profile.name} placeholder="add your name" label="Your name"
                 onSave={(v) => updateProfile({ name: v })}
                 className="text-teal-300 font-black text-2xl sm:text-3xl" />
-              {profile.name && <span className="ml-1">👋</span>}
+              {profile.name && <span className="ml-1">👋</span>} */}
+              
             </h1>
           </div>
           {/* Target band widget */}
@@ -101,7 +102,7 @@ export function WelcomeCard() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         {/* Exam date + countdown */}
-        <div className="flex flex-wrap items-center justify-between gap-4">
+        {/* <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-white/40 mb-2">Exam Date</p>
             {profile.examDate ? (
@@ -144,7 +145,7 @@ export function WelcomeCard() {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
 
         {/* Motivation */}
         <div className="flex items-start gap-3 px-4 py-3 rounded-2xl bg-white/4 border border-white/8">

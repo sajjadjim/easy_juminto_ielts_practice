@@ -218,8 +218,8 @@ export function PracticeCard() {
                 className="field w-20 px-2 py-2.5 rounded-xl text-center font-black text-lg
                   text-navy-900 dark:text-ivory-50 focus:outline-none transition-all"
               />
-              <div className="flex gap-2">
-                {[18, 19].map((b) => (
+              <div className="flex gap-2 cursor-pointer">
+                {[21, 20].map((b) => (
                   <button key={b} onClick={() => setBook(b)}
                     aria-label={`Quick select book ${b}`}
                     className={`px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all duration-200
