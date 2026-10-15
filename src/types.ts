@@ -1,7 +1,6 @@
 // ── Types ──────────────────────────────────────────────────────────────────
 
 export type Module = 'reading' | 'listening' | 'writing' | 'speaking';
-export type Theme = 'light' | 'dark';
 
 export interface PracticeSession {
   id: string;
@@ -10,7 +9,7 @@ export interface PracticeSession {
   module: Module;
   part: number;
   url: string;
-  openedAt: string; // ISO date string
+  openedAt: string;
   status: 'opened' | 'completed';
   completedAt?: string;
   confidenceRating?: number; // 1-5
@@ -38,12 +37,11 @@ export interface UrlTemplates {
 export interface UserProfile {
   name: string;
   targetBand: string;
-  examDate: string; // ISO date string or ''
+  examDate: string;
 }
 
 export interface AppState {
   profile: UserProfile;
-  theme: Theme;
   selection: {
     book: number;
     test: number;
